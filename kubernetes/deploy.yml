@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployudacitylearnmirco
+  namespace: deployudacitylearnmirco
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployudacitylearnmirco
+  template:
+    metadata:
+      labels:
+        app: deployudacitylearnmirco
+    spec:
+      containers:
+      - name: deployudacitylearnmirco
+        image: mikoski890/udacitylearnmirco
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
